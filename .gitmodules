@@ -1,0 +1,3 @@
+[submodule "themes/pico-base"]
+	path = themes/pico-base
+	url = https://github.com/mnordhaus/pico-base.git
