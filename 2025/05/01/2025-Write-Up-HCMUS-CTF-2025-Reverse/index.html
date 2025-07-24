@@ -45,7 +45,7 @@
 <meta property="og:image" content="https://hackmd.io/_uploads/rkCLJY98lx.png">
 <meta property="og:image" content="https://hackmd.io/_uploads/HJiPZ_58xx.png">
 <meta property="article:published_time" content="2025-05-01T14:00:00.000Z">
-<meta property="article:modified_time" content="2025-07-23T08:53:29.607Z">
+<meta property="article:modified_time" content="2025-07-24T02:57:50.666Z">
 <meta property="article:author" content="nukoneZ">
 <meta property="article:tag" content="CTF">
 <meta property="article:tag" content="Reverse">
@@ -132,7 +132,7 @@
 <meta property="og:image" content="https://hackmd.io/_uploads/rkCLJY98lx.png">
 <meta property="og:image" content="https://hackmd.io/_uploads/HJiPZ_58xx.png">
 <meta property="article:published_time" content="2025-05-01T14:00:00.000Z">
-<meta property="article:modified_time" content="2025-07-23T08:53:29.607Z">
+<meta property="article:modified_time" content="2025-07-24T02:57:50.666Z">
 <meta property="article:author" content="nukoneZ">
 <meta property="article:tag" content="CTF">
 <meta property="article:tag" content="Reverse">
@@ -370,10 +370,14 @@
 <li>You just need to focus on the file in the pack directory named <code>c1edf5ae097edd6153379cf537d33a71a6b22718.pack</code>. I performed a reverse XOR with the <code>PACK</code> header and obtained the result: <code>0x1d</code>.<br><img src="https://hackmd.io/_uploads/SytXWX0Ugg.png" alt="image"></li>
 <li>Once I retrieved the <code>PACK</code> file, I utilized various forensic methods to reconstruct and analyze its original form.</li>
 <li>These are some of the commands I used to recover the file. You can explore them further to understand how the recovery works.<blockquote>
-<p>git index-pack -v download.pack<br> git verify-pack -v pack-3f16b5775d22b956bba03cc9929ca28b1f69d309.idx<br>ls -l pack-3f16b5775d22b956bba03cc9929ca28b1f69d309.*<br>mkdir unpacked &amp;&amp; cd unpacked<br>git unpack-objects &lt; ..&#x2F;pack-3f16b5775d22b956bba03cc9929ca28b1f69d309.pack<br>git cat-file -p ec75d6adad3e5ccf610281861d612165521ca547<br><img src="https://hackmd.io/_uploads/H13tfXRLxg.png" alt="image"><br>FLAG: HCMUS-CTF{securely_protect3d_by_g1t}</p>
+<p>git index-pack -v download.pack<br> git verify-pack -v pack-3f16b5775d22b956bba03cc9929ca28b1f69d309.idx<br>ls -l pack-3f16b5775d22b956bba03cc9929ca28b1f69d309.*<br>mkdir unpacked &amp;&amp; cd unpacked<br>git unpack-objects &lt; ..&#x2F;pack-3f16b5775d22b956bba03cc9929ca28b1f69d309.pack<br>git cat-file -p ec75d6adad3e5ccf610281861d612165521ca547</p>
 </blockquote>
 </li>
 </ul>
+<p><img src="https://hackmd.io/_uploads/H13tfXRLxg.png" alt="image"></p>
+<blockquote>
+<p>FLAG: HCMUS-CTF{securely_protect3d_by_g1t}</p>
+</blockquote>
 <h2 id="Reversing-nmb"><a href="#Reversing-nmb" class="headerlink" title="Reversing&#x2F;nmb"></a>Reversing&#x2F;nmb</h2><ul>
 <li>In this challenge, I received a <code>main.exe</code> file whose code after compilation is still unclear.<br><img src="https://hackmd.io/_uploads/B1sWzK98lx.png" alt="image"></li>
 <li>It’s hard to be static at first glance, so I’ll debug it and see.</li>
