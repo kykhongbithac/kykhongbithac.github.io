@@ -189,6 +189,11 @@
       <h3 class="widget-title">Archives</h3>
       
       
+        <a class="archive-link" href="/archives/2025/09 ">
+          September 2025 
+          <div class="archive-count">1 </div>
+        </a>
+      
         <a class="archive-link" href="/archives/2025/08 ">
           August 2025 
           <div class="archive-count">6 </div>
@@ -204,6 +209,12 @@
     <div class="widget">
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
+        
+          <a class="recent-link" href="/2025/09/01/HOLACTF%202025%20Writeups/" title="HOLACTF 2025 Writeups" >
+            <div class="recent-link-text">
+              HOLACTF 2025 Writeups
+            </div>
+          </a>
         
           <a class="recent-link" href="/2025/08/19/Korea-2025/" title="Hacktheon Sejong 2025 🇰🇷" >
             <div class="recent-link-text">
@@ -229,12 +240,6 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/08/18/Alien-Saboteur/" title="Reverse/Alien Saboteur" >
-            <div class="recent-link-text">
-              Reverse/Alien Saboteur
-            </div>
-          </a>
-        
       </ul>
     </div>
   </div>
@@ -245,6 +250,88 @@
     </div>
     <div id="content-body">
       
+   
+
+
+<article id="post-HOLACTF 2025 Writeups" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2025/09/01/HOLACTF%202025%20Writeups/">HOLACTF 2025 Writeups</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2025-08-31T18:45:04.100Z" itemprop="datePublished">2025-09-01</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    Uncategorized 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            89k words 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              HOLACTF 2025 WriteupsMiscthe REGEXMô tả
+Service: nc host port
+Server đưa ra 10 round, mỗi round là một regex pattern ngẫu nhiên.
+Nhiệm vụ: gửi một chuỗi ASCII printable (0x20–0x7E) sao cho khớp hoàn toàn với pattern đó.
+Mỗi round giới hạn 5s, độ dài input ≤ 256.
+Nếu vượt qua 10 round sẽ nhận được flag HOLACTF&#123;...&#125;.
+
+
+Phân tíchRegex mà server sinh ra có đặc điểm:
+
+Luôn được bao bởi ^ ... $ (full match).
+Dùng nhiều lookahead (?=...) để áp đặt ràng buộc:
+(?=.&#123;10&#125;$) ép độ dài ...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2025/09/01/HOLACTF%202025%20Writeups/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
    
 
 
