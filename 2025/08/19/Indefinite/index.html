@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>Reverse/Indefinite | nukoneZ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="🏆 HackTheBox - Reverse ChallengeChallenge Description You hold in one hand an encrypted datastream, and in the other the central core of a Golden Fang communications terminal. Countless spies have ri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reverse&#x2F;Indefinite">
+<meta property="og:url" content="https://kykhongbithac.github.io/2025/08/19/Indefinite/">
+<meta property="og:site_name" content="nukoneZ">
+<meta property="og:description" content="🏆 HackTheBox - Reverse ChallengeChallenge Description You hold in one hand an encrypted datastream, and in the other the central core of a Golden Fang communications terminal. Countless spies have ri">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hackmd.io/_uploads/B1cnrLfuee.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/rkGCLLGdlx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/B1yuwLfOee.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/H1pJK8Gulx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/HJx2iLMulx.png">
+<meta property="article:published_time" content="2025-08-19T05:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-19T14:18:26.000Z">
+<meta property="article:author" content="Huỳnh Quốc Kỳ">
+<meta property="article:tag" content="HackTheBox">
+<meta property="article:tag" content="Reverse">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hackmd.io/_uploads/B1cnrLfuee.png">
+  
+    <link rel="alternate" href="/atom.xml" title="nukoneZ" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/image/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/image/background.gif" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="  ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>nukoneZ </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/image/avata.gif></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">nukoneZ </div>
+      <div class="dot"></div>
+      <div class="subtitle">Blog | CTF | Security </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://www.facebook.com/quocky05" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://www.instagram.com/nukonez" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/kykhongbithac" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" href="mailto:huynhky3010@gmail.com" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/Malware-Analysis/">
+                Malware Analysis
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Write-up/">
+                Write-up
+                <div class="category-count">6</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Blog/">
+                Blog
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Analysis/" rel="tag">Analysis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/FPTU/" rel="tag">FPTU</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HCMUS-CTF-2025/" rel="tag">HCMUS-CTF-2025</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HOLACTF2025/" rel="tag">HOLACTF2025</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HackTheBox/" rel="tag">HackTheBox</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HacktheonSejong/" rel="tag">HacktheonSejong</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Korea-%F0%9F%87%B0%F0%9F%87%B7/" rel="tag">Korea 🇰🇷</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Malware/" rel="tag">Malware</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/PTITHCM-CTF-2025/" rel="tag">PTITHCM CTF 2025</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Reverse/" rel="tag">Reverse</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Reverse-Engineering/" rel="tag">Reverse Engineering</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ScriptCTF2025/" rel="tag">ScriptCTF2025</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Security/" rel="tag">Security</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Trips/" rel="tag">Trips</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/VM/" rel="tag">VM</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Archives</h3>
+      
+      
+        <a class="archive-link" href="/archives/2025/09 ">
+          September 2025 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2025/08 ">
+          August 2025 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2025/09/17/fob%20PTITHCM%20CTF%202025/" title="Reverse/fob (PTITHCM 2025)" >
+            <div class="recent-link-text">
+              Reverse/fob (PTITHCM 2025)
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/09/01/HOLACTF%202025%20Writeups/" title="HOLACTF 2025 Writeups" >
+            <div class="recent-link-text">
+              HOLACTF 2025 Writeups
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/08/19/Korea-2025/" title="Hacktheon Sejong 2025 🇰🇷" >
+            <div class="recent-link-text">
+              Hacktheon Sejong 2025 🇰🇷
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/08/19/Indefinite/" title="Reverse/Indefinite" >
+            <div class="recent-link-text">
+              Reverse/Indefinite
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/08/19/hcmusctf2025/" title="Reverse/HCMUS-CTF 2025" >
+            <div class="recent-link-text">
+              Reverse/HCMUS-CTF 2025
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+
+<article id="post-Indefinite" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        Reverse/Indefinite
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2025-08-19T05:00:00.000Z" itemprop="datePublished">2025-08-19</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Write-up/">Write-up</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            11k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HackTheBox/" rel="tag">HackTheBox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Reverse/" rel="tag">Reverse</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="🏆-HackTheBox-Reverse-Challenge"><a href="#🏆-HackTheBox-Reverse-Challenge" class="headerlink" title="🏆 HackTheBox - Reverse Challenge"></a>🏆 HackTheBox - Reverse Challenge</h1><h2 id="Challenge-Description"><a href="#Challenge-Description" class="headerlink" title="Challenge Description"></a>Challenge Description</h2><blockquote>
+<p>You hold in one hand an encrypted datastream, and in the other the central core of a Golden Fang communications terminal. Countless spies have risked their lives to steal both the encrypted attack plans, and the technology used to conceal it, and bring them to you for expert analysis. To your horror, as you turn the screws on the core, its defense mechanisms spring to life, concealing and covering its workings. You have minutes to spare before the device destroys itself - can you crack the code?</p>
+</blockquote>
+<hr>
+<h2 id="🔎-Analysis"><a href="#🔎-Analysis" class="headerlink" title="🔎 Analysis"></a>🔎 Analysis</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __fastcall __noreturn <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">const</span> <span class="type">char</span> **argv, <span class="type">const</span> <span class="type">char</span> **envp)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v3; <span class="comment">// [rsp+1Ch] [rbp-4h]</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ( argc != <span class="number">2</span> )</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">  mprotect((child &amp; <span class="number">0xFFFFFFFFFFFFF000L</span>L), <span class="number">0x1000u</span>, <span class="number">7</span>);</span><br><span class="line">  v3 = fork();</span><br><span class="line">  <span class="keyword">if</span> ( !v3 )</span><br><span class="line">  &#123;</span><br><span class="line">    ptrace(PTRACE_TRACEME, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    __debugbreak();</span><br><span class="line">  &#125;</span><br><span class="line">  wait(<span class="number">0</span>);</span><br><span class="line">  ptrace(PTRACE_CONT, v3, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  tracer(v3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Nhìn sơ qua hàm <code>main()</code> có lẽ đây là một chương trình anti debug và ofuscated khá mạnh.<br><img src="https://hackmd.io/_uploads/B1cnrLfuee.png" alt="image"></li>
+<li>Hàm tracer(pid_t a1) là một trình theo dõi (tracer) được dùng để giải nén (inflate) dữ liệu đã bị nén (compressed) trong bộ nhớ của tiến trình con (child()) được tạo từ fork().</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">unsigned</span> __int64 __fastcall <span class="title function_">do_inflate</span><span class="params">(__int64 a1, <span class="type">int</span> a2, __int64 a3, <span class="type">int</span> a4)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> v7; <span class="comment">// [rsp+2Ch] [rbp-84h]</span></span><br><span class="line">  _QWORD v8[<span class="number">15</span>]; <span class="comment">// [rsp+30h] [rbp-80h] BYREF</span></span><br><span class="line">  <span class="type">unsigned</span> __int64 v9; <span class="comment">// [rsp+A8h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v9 = __readfsqword(<span class="number">0x28u</span>);</span><br><span class="line">  <span class="built_in">memset</span>(v8, <span class="number">0</span>, <span class="number">0x70u</span>);</span><br><span class="line">  inflateInit_(v8, <span class="string">&quot;1.2.11&quot;</span>, <span class="number">112</span>);</span><br><span class="line">  v8[<span class="number">0</span>] = a1;</span><br><span class="line">  LODWORD(v8[<span class="number">1</span>]) = a2;</span><br><span class="line">  v8[<span class="number">3</span>] = a3;</span><br><span class="line">  LODWORD(v8[<span class="number">4</span>]) = a4;</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">    v7 = inflate(v8, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> ( v7 == <span class="number">1</span> )</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">if</span> ( v7 &gt;= <span class="number">-4</span> &amp;&amp; (v7 &lt;= <span class="number">-3</span> || v7 == <span class="number">2</span>) )</span><br><span class="line">    &#123;</span><br><span class="line">      inflateEnd(v8);</span><br><span class="line">      <span class="built_in">exit</span>(<span class="number">-5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> ( !LODWORD(v8[<span class="number">4</span>]) );</span><br><span class="line">  <span class="keyword">return</span> __readfsqword(<span class="number">0x28u</span>) ^ v9;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Các hàm con được giải nén thông qua <code>tracer</code> với thuật toán Zlib trên với version <code>1.2.11</code>.</li>
+<li>Ngoài ra trong chương trình này còn áp dụng thủ thuật UD2 opcode để chống disassemble.<br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/11140136/whats-the-purpose-of-the-ud2-opcode-in-the-linux-kernel">https://stackoverflow.com/questions/11140136/whats-the-purpose-of-the-ud2-opcode-in-the-linux-kernel</a></li>
+<li>Vấn đề chính bây giờ chúng ta cần khôi phục lại các hàm con đã bị compressed bởi zlib.<br><img src="https://hackmd.io/_uploads/rkGCLLGdlx.png" alt="image"></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">.text:00000000000010AD ; void __noreturn do_encrypt_file()</span><br><span class="line">.text:00000000000010AD                 public do_encrypt_file</span><br><span class="line">.text:00000000000010AD do_encrypt_file proc near               ; CODE XREF: child+73↓p</span><br><span class="line">.text:00000000000010AD ; __unwind &#123;</span><br><span class="line">.text:00000000000010AD                 ud2</span><br><span class="line">.text:00000000000010AD do_encrypt_file endp</span><br><span class="line">.text:00000000000010AD</span><br><span class="line">.text:00000000000010AD ; ---------------------------------------------------------------------------</span><br><span class="line">.text:00000000000010AF                 db 0C5h</span><br><span class="line">.text:00000000000010B0                 dq 0B9C780000010B00h, 0C0C6FCD1EA7CE8F5h, 3E9674785F6B3A3h</span><br><span class="line">.text:00000000000010C8                 dq 0FB5CD1E1BD0CE8Fh, 42815DBA3C934A18h, 0A3DFFFFCFCC45FC7h</span><br><span class="line">.text:00000000000010E0                 dq 0EEC400BD882B00F9h, 2802FA1DD1E07D74h, 7F3FC240D7E540Fh</span><br><span class="line">.text:00000000000010F8                 dq 7FFFF07E3DC41850h, 0A3C080183B438A90h, 3C279D1E75A7FAF3h</span><br><span class="line">.text:0000000000001110                 dq 60A8800DE8F05FBEh, 0F92F352F419C70BCh, 0B02686CC030B0398h</span><br><span class="line">.text:0000000000001128                 dq 7E687FE400FD75Ah, 0E52D026108C1EECh, 31401FD2C436B490h</span><br><span class="line">.text:0000000000001140                 dq 0ECCC0053AFBA0620h, 3100FDF6E8F0E00Dh, 6041903EE5481CE5h</span><br><span class="line">.text:0000000000001158                 dq 1029904AB00E0F29h, 0D4A807D4B0263D29h, 0C8C4C52C1EB880Fh</span><br><span class="line">.text:0000000000001170                 dq 63AB00061E4E130Ch, 0B085h, 7 dup(0)</span><br><span class="line">.text:0000000000001170 ; &#125; // starts at 10AD</span><br><span class="line">.text:00000000000011B8</span><br><span class="line">.text:00000000000011B8 ; =============== S U B R O U T I N E =======================================</span><br><span class="line">.text:00000000000011B8</span><br><span class="line">.text:00000000000011B8 ; Attributes: noreturn</span><br><span class="line">.text:00000000000011B8</span><br><span class="line">.text:00000000000011B8                 public get_filesize</span><br><span class="line">.text:00000000000011B8 get_filesize    proc near</span><br><span class="line">.text:00000000000011B8 ; __unwind &#123;</span><br><span class="line">.text:00000000000011B8                 ud2</span><br><span class="line">.text:00000000000011B8 get_filesize    endp</span><br><span class="line">.text:00000000000011B8</span><br><span class="line">.text:00000000000011B8 ; ---------------------------------------------------------------------------</span><br><span class="line">.text:00000000000011BA                 dw 79h, 85h, 0</span><br><span class="line">.text:00000000000011C0                 dq 0D1EA7CE8F50B9C78h, 0E7478303030366F8h, 7478A7FFFFFF88DEh</span><br><span class="line">.text:00000000000011D8                 dq 0C3FAEF9806AA8B3h, 0EE8A004D4EF4780Fh, 5F0B0214EC300A00h</span><br><span class="line">.text:00000000000011F0                 dq 0DDD1EC2A1AB1ECFFh, 0F3A3CD79D1E3D20Ah, 3D6860666770BF8h</span><br><span class="line">.text:0000000000001208                 dq 0E640C9B6BD1E6225h, 940FDFFFFE3FED8Bh, 0D75A900FECE2FFFEh</span><br><span class="line">.text:0000000000001220                 dq 8C3C523FA5DD1E09h, 560BEB09416C04Dh, 42AC6D000C3C9F8Ah</span><br><span class="line">.text:0000000000001238                 db 0Ah, 4 dup(0)</span><br><span class="line">.text:0000000000001238 ; &#125; // starts at 11B8</span><br><span class="line">.text:000000000000123D</span><br><span class="line">.text:000000000000123D ; =============== S U B R O U T I N E =======================================</span><br><span class="line">.text:000000000000123D</span><br><span class="line">.text:000000000000123D ; Attributes: noreturn</span><br><span class="line">.text:000000000000123D</span><br><span class="line">.text:000000000000123D                 public read_file_data</span><br><span class="line">.text:000000000000123D read_file_data  proc near</span><br><span class="line">.text:000000000000123D ; __unwind &#123;</span><br><span class="line">.text:000000000000123D                 ud2</span><br><span class="line">.text:000000000000123D read_file_data  endp</span><br><span class="line">.text:000000000000123D</span><br><span class="line">.text:000000000000123D ; ---------------------------------------------------------------------------</span><br><span class="line">.text:000000000000123F                 db 6Fh</span><br><span class="line">.text:0000000000001240                 dq 0B9C780000007A00h, 0C0C6FCD1EA7CE8F5h, 3E9674785F6B3A3h</span><br><span class="line">.text:0000000000001258                 dq 2FAEDD1E1BD0CE8Fh, 3C181998154D7A3Ch, 0BFFFF1F988BF8F3Ah</span><br><span class="line">.text:0000000000001270                 dq 1FDAE68F0FEBA747h, 401CB6BD1E62A50Ch, 81FFFDE140A11799h</span><br><span class="line">.text:0000000000001288                 dq 0FE87741483645E0h, 1E1BD76EFEA06E8Fh, 0E73440323177179Dh</span><br><span class="line">.text:00000000000012A0                 dq 0C5D9033501C9077Fh, 1879382804F640h</span><br><span class="line">.text:00000000000012B0                 db 19h, 0F5h, 42h, 0F6h, 3 dup(0)</span><br><span class="line">.text:00000000000012B0 ; &#125; // starts at 123D</span><br><span class="line">.text:00000000000012B7</span><br><span class="line">.text:00000000000012B7 ; =============== S U B R O U T I N E =======================================</span><br><span class="line">.text:00000000000012B7</span><br><span class="line">.text:00000000000012B7 ; Attributes: noreturn</span><br><span class="line">.text:00000000000012B7</span><br><span class="line">.text:00000000000012B7                 public write_file_data</span><br><span class="line">.text:00000000000012B7 write_file_data proc near</span><br><span class="line">.text:00000000000012B7 ; __unwind &#123;</span><br><span class="line">.text:00000000000012B7                 ud2</span><br><span class="line">.text:00000000000012B7 write_file_data endp</span><br><span class="line">.text:00000000000012B7</span><br><span class="line">.text:00000000000012B7 ; ---------------------------------------------------------------------------</span><br><span class="line">.text:00000000000012B9                 db 70h, 0, 79h, 3 dup(0), 78h</span><br><span class="line">.text:00000000000012C0                 dq 0FCD1EA7CE8F50B9Ch, 674785F6B3A3C0C6h, 0DD1E1BD0CE8F03E9h</span><br><span class="line">.text:00000000000012D8                 dq 3132B74D7A3C2FAEh, 0FBE8F17F1E747830h, 9A3C3FAE9D1EFFFFh</span><br><span class="line">.text:00000000000012F0                 dq 0DAF4798A94307F6Bh, 0EF0A06DC5E6501F6h, 7414823E2F040FFFh</span><br><span class="line">.text:0000000000001308                 dq 76EFEA06E8F0FE87h, 323177179D1E1BDh, 9033501CB053F344h</span><br><span class="line">.text:0000000000001320                 dq 0E02013FFFFDBF3FDh, 94656AC0061E4h</span><br><span class="line">.text:0000000000001320 ; &#125; // starts at 12B7</span><br><span class="line">.text:0000000000001330</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Lúc này mình sẽ dùng <code>binwalk</code> để dump ra 5 shellcode tương ứng với 5 hàm con này.<br><img src="https://hackmd.io/_uploads/B1yuwLfOee.png" alt="image"></li>
+<li>Sau khi binwalk thì mình xem lại hàm với platform x86_64 thì thấy mã khá sạch.<br><img src="https://hackmd.io/_uploads/H1pJK8Gulx.png" alt="image"></li>
+<li>Sau đó mình sẽ vá binary lại với <code>dd</code> map lại toàn bộ function bị compressed.<blockquote>
+<p><code>dd if=&lt;hàm_tách_ra.bin&gt; of=bin_patched bs=1 seek=&lt;offset&gt; count=&lt;số_byte&gt; conv=notrunc</code></p>
+</blockquote>
+</li>
+<li>Trong đó: + <code>seek</code> là dạng dec address của hàm đó tương ứng trong file binary + <code>count</code> số byte của file &lt;hàm_tách_ra.bin&gt;</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dd if=do_encrypt_file.bin of=bin_patched bs=1 seek=4269 count=267 conv=notrunc</span><br><span class="line">dd if=get_filesize.bin of=bin_patched bs=1 seek=4536 count=133 conv=notrunc</span><br><span class="line">dd if=write_file_data.bin of=bin_patched bs=1 seek=4791 count=121 conv=notrunc</span><br><span class="line">dd if=read_file_data.bin of=bin_patched bs=1 seek=4669 count=122 conv=notrunc</span><br><span class="line">dd if=do_encryption.bin of=bin_patched bs=1 seek=5064 count=108 conv=notrunc</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Sau khi mình vá toàn bộ vào file mới <code>bin_patched</code> và mã mới trông có vẻ dễ chịu hơn.</li>
+<li>Để có thể debug thì mình cần phải patched cả thằng <code>fork()</code> để nhảy thẳng vào tiến trình chính.<br><img src="https://hackmd.io/_uploads/HJx2iLMulx.png" alt="image"></li>
+<li>Nhìn có vẻ đã ổn hết bây giờ mình sẽ reverse lại.</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __fastcall __noreturn <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">const</span> <span class="type">char</span> **argv, <span class="type">const</span> <span class="type">char</span> **envp)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v3; <span class="comment">// [rsp+1Ch] [rbp-4h]</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ( argc != <span class="number">2</span> )</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">  v3 = mprotect((child &amp; <span class="number">0xFFFFFFFFFFFFF000L</span>L), <span class="number">0x1000u</span>, <span class="number">7</span>);</span><br><span class="line">  <span class="keyword">if</span> ( !v3 )</span><br><span class="line">  &#123;</span><br><span class="line">    ptrace(PTRACE_TRACEME, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    __debugbreak();</span><br><span class="line">  &#125;</span><br><span class="line">  wait(<span class="number">0</span>);</span><br><span class="line">  ptrace(PTRACE_CONT, v3, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  tracer(v3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Tại hàm <code>child()</code> nó sẽ random 8 byte và đưa vào hàm <code>do_encrypt_file()</code> có thể làm seed.</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">unsigned</span> __int64 __fastcall <span class="title function_">child</span><span class="params">(__int64 a1)</span></span><br><span class="line">&#123;</span><br><span class="line">  __int64 ptr; <span class="comment">// [rsp+18h] [rbp-18h] BYREF</span></span><br><span class="line">  FILE *stream; <span class="comment">// [rsp+20h] [rbp-10h]</span></span><br><span class="line">  <span class="type">unsigned</span> __int64 v4; <span class="comment">// [rsp+28h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v4 = __readfsqword(<span class="number">0x28u</span>);</span><br><span class="line">  ptr = <span class="number">0</span>;</span><br><span class="line">  stream = fopen(<span class="string">&quot;/dev/urandom&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">  fread(&amp;ptr, <span class="number">8u</span>, <span class="number">1u</span>, stream);</span><br><span class="line">  fclose(stream);</span><br><span class="line">  do_encrypt_file(a1, <span class="number">0</span>, ptr);</span><br><span class="line">  <span class="keyword">return</span> __readfsqword(<span class="number">0x28u</span>) ^ v4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Có lẽ hàm mã hóa chính tại hàm <code>do_encryption(v8, v9 + 1, a3)</code> và nhận seed là 8 byte vừa rand xong, và nó sẽ ghi 8 byte này vào đầu file .enc (Chừa manh mối cho chúng ta reverse).</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">__int64 __fastcall <span class="title function_">do_encrypt_file</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *a1, <span class="type">char</span> *a2, __int64 a3)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">size_t</span> v3; <span class="comment">// rax</span></span><br><span class="line">  __int64 filesize; <span class="comment">// rax</span></span><br><span class="line">  <span class="type">char</span> *dest; <span class="comment">// [rsp+10h] [rbp-20h]</span></span><br><span class="line">  __int64 v8; <span class="comment">// [rsp+20h] [rbp-10h]</span></span><br><span class="line">  _QWORD *v9; <span class="comment">// [rsp+28h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  dest = a2;</span><br><span class="line">  <span class="keyword">if</span> ( !a2 )</span><br><span class="line">  &#123;</span><br><span class="line">    v3 = <span class="built_in">strlen</span>(a1);</span><br><span class="line">    dest = <span class="built_in">malloc</span>(v3 + <span class="number">5</span>);</span><br><span class="line">    <span class="built_in">strcpy</span>(dest, a1);</span><br><span class="line">    <span class="built_in">strcat</span>(dest, <span class="string">&quot;.enc&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  filesize = get_filesize(a1);</span><br><span class="line">  v8 = (filesize &amp; <span class="number">7</span>) + filesize;</span><br><span class="line">  v9 = <span class="built_in">malloc</span>(v8 + <span class="number">8</span>);</span><br><span class="line">  *v9 = a3;</span><br><span class="line">  read_file_data(a1, v8, v9 + <span class="number">1</span>);</span><br><span class="line">  do_encryption(v8, v9 + <span class="number">1</span>, a3);</span><br><span class="line">  <span class="keyword">return</span> write_file_data(dest, v8 + <span class="number">8</span>, v9);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Tại hàm <code>do_encryption()</code> nó đang thực hiện mã hóa XOR tuần tự với 8 bytes và hàm <code>advance(a3)</code> sẽ gen key liên tục dựa vào seed gốc.</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">__int64 __fastcall <span class="title function_">advance</span><span class="params">(__int64 a1)</span></span><br><span class="line">&#123;</span><br><span class="line">  __int64 v3; <span class="comment">// [rsp+0h] [rbp-38h] BYREF</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v4; <span class="comment">// [rsp+10h] [rbp-28h]</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v5; <span class="comment">// [rsp+14h] [rbp-24h]</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v6; <span class="comment">// [rsp+18h] [rbp-20h]</span></span><br><span class="line">  <span class="type">int</span> v7; <span class="comment">// [rsp+1Ch] [rbp-1Ch]</span></span><br><span class="line">  <span class="type">int</span> i; <span class="comment">// [rsp+20h] [rbp-18h]</span></span><br><span class="line">  <span class="type">int</span> v9; <span class="comment">// [rsp+24h] [rbp-14h]</span></span><br><span class="line">  __int64 v10; <span class="comment">// [rsp+28h] [rbp-10h]</span></span><br><span class="line">  __int64 *v11; <span class="comment">// [rsp+30h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v3 = a1;</span><br><span class="line">  v11 = &amp;v3;</span><br><span class="line">  v4 = <span class="number">8</span>;</span><br><span class="line">  v5 = <span class="number">0</span>;</span><br><span class="line">  v6 = <span class="number">-1</span>;</span><br><span class="line">  <span class="keyword">while</span> ( v4 &gt; v5 )</span><br><span class="line">  &#123;</span><br><span class="line">    v7 = *(v11 + v5);</span><br><span class="line">    v6 ^= v7;</span><br><span class="line">    <span class="keyword">for</span> ( i = <span class="number">7</span>; i &gt;= <span class="number">0</span>; --i )</span><br><span class="line">    &#123;</span><br><span class="line">      v9 = -(v6 &amp; <span class="number">1</span>);</span><br><span class="line">      v6 = (v6 &gt;&gt; <span class="number">1</span>) ^ v9 &amp; <span class="number">0xEDB88320</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ++v5;</span><br><span class="line">  &#125;</span><br><span class="line">  v10 = ~v6;</span><br><span class="line">  __asm &#123; movbe   rax, [rbp+var_10] &#125;</span><br><span class="line">  <span class="keyword">return</span> v10 | _RAX;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Tới đây mình làm biếng code lại hàm CRC này nên mình debug đổi value của seed với 8byte đầu của file .enc luôn rồi lấy key cho lẹ &#x3D;]]<br><code>seed = 0x01e79a6fd89b23a8</code></li>
+</ul>
+<h2 id="🛠️-Solution"><a href="#🛠️-Solution" class="headerlink" title="🛠️ Solution"></a>🛠️ Solution</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">enc = <span class="built_in">open</span>(<span class="string">&quot;flag.txt.enc&quot;</span>,<span class="string">&quot;rb&quot;</span>).read()</span><br><span class="line">key = [ <span class="number">0x87</span>, <span class="number">0x5D</span>, <span class="number">0x02</span>, <span class="number">0xD9</span>, <span class="number">0xD9</span>, <span class="number">0x02</span>, <span class="number">0x5D</span>, <span class="number">0x87</span>,  <span class="number">0x19</span>, <span class="number">0x70</span>, <span class="number">0xE2</span>, <span class="number">0x93</span>, <span class="number">0x93</span>, <span class="number">0xE2</span>, <span class="number">0x70</span>, <span class="number">0x19</span>,  <span class="number">0xB9</span>, <span class="number">0x59</span>, <span class="number">0x53</span>, <span class="number">0x69</span>, <span class="number">0x69</span>, <span class="number">0x53</span>, <span class="number">0x59</span>, <span class="number">0xB9</span>,<span class="number">0xB1</span>, <span class="number">0x14</span>, <span class="number">0xFE</span>, <span class="number">0xF5</span>, <span class="number">0xF5</span>, <span class="number">0xFE</span>, <span class="number">0x14</span>, <span class="number">0xB1</span>, <span class="number">0xC9</span>, <span class="number">0xFA</span>, <span class="number">0x89</span>, <span class="number">0xDF</span>, <span class="number">0xDF</span>, <span class="number">0x89</span>, <span class="number">0xFA</span>, <span class="number">0xC9</span>, <span class="number">0x99</span>, <span class="number">0xB1</span>, <span class="number">0xE7</span>, <span class="number">0x6E</span>, <span class="number">0x6E</span>, <span class="number">0xE7</span>, <span class="number">0xB1</span>, <span class="number">0x99</span>, <span class="number">0xBD</span>, <span class="number">0x24</span>, <span class="number">0xF5</span>, <span class="number">0xFD</span>, <span class="number">0xFD</span>, <span class="number">0xF5</span>, <span class="number">0x24</span>, <span class="number">0xBD</span>, <span class="number">0x00</span>, <span class="number">0x4C</span>, <span class="number">0xE3</span>, <span class="number">0x65</span>, <span class="number">0x65</span>, <span class="number">0xE3</span>, <span class="number">0x4C</span>, <span class="number">0x00</span>,  <span class="number">0xB4</span>, <span class="number">0x38</span>, <span class="number">0x1B</span>, <span class="number">0xDC</span>, <span class="number">0xDC</span>, <span class="number">0x1B</span>, <span class="number">0x38</span>, <span class="number">0xB4</span>, <span class="number">0xDF</span>, <span class="number">0x0D</span>, <span class="number">0x64</span>, <span class="number">0x2E</span>, <span class="number">0x2E</span>, <span class="number">0x64</span>, <span class="number">0x0D</span>, <span class="number">0xDF</span>,  <span class="number">0xC9</span>, <span class="number">0x0C</span>, <span class="number">0xAD</span>, <span class="number">0x9A</span>, <span class="number">0x9A</span>, <span class="number">0xAD</span>, <span class="number">0x0C</span>, <span class="number">0xC9</span>, <span class="number">0x6B</span>, <span class="number">0x2E</span>, <span class="number">0x0F</span>, <span class="number">0xB4</span>, <span class="number">0xB4</span>, <span class="number">0x0F</span>, <span class="number">0x2E</span>, <span class="number">0x6B</span>,<span class="number">0x48</span>, <span class="number">0x12</span>, <span class="number">0x1B</span>, <span class="number">0x2B</span>, <span class="number">0x2B</span>, <span class="number">0x1B</span>, <span class="number">0x12</span>, <span class="number">0x48</span>,<span class="number">0x44</span>, <span class="number">0xBA</span>, <span class="number">0xA8</span>, <span class="number">0xD7</span>, <span class="number">0xD7</span>, <span class="number">0xA8</span>, <span class="number">0xBA</span>, <span class="number">0x44</span>,  <span class="number">0x19</span>, <span class="number">0x7D</span>, <span class="number">0x19</span>, <span class="number">0x81</span>, <span class="number">0x81</span>, <span class="number">0x19</span>, <span class="number">0x7D</span>, <span class="number">0x19</span>, <span class="number">0x29</span>, <span class="number">0x68</span>, <span class="number">0xDE</span>, <span class="number">0x9B</span>, <span class="number">0x9B</span>, <span class="number">0xDE</span>, <span class="number">0x68</span>, <span class="number">0x29</span>, <span class="number">0x94</span>, <span class="number">0xC8</span>, <span class="number">0x60</span>, <span class="number">0xB7</span>, <span class="number">0xB7</span>, <span class="number">0x60</span>, <span class="number">0xC8</span>, <span class="number">0x94</span>, <span class="number">0xC8</span>, <span class="number">0xD8</span>, <span class="number">0x3A</span>, <span class="number">0xA7</span>, <span class="number">0xA7</span>, <span class="number">0x3A</span>, <span class="number">0xD8</span>, <span class="number">0xC8</span>,<span class="number">0xEB</span>, <span class="number">0xED</span>, <span class="number">0xB5</span>, <span class="number">0x16</span>, <span class="number">0x16</span>, <span class="number">0xB5</span>, <span class="number">0xED</span>, <span class="number">0xEB</span>, <span class="number">0x84</span>, <span class="number">0x43</span>, <span class="number">0xA7</span>, <span class="number">0x16</span>, <span class="number">0x16</span>, <span class="number">0xA7</span>, <span class="number">0x43</span>, <span class="number">0x84</span>, <span class="number">0x80</span>, <span class="number">0x60</span>, <span class="number">0xCD</span>, <span class="number">0xB4</span>, <span class="number">0xB4</span>, <span class="number">0xCD</span>, <span class="number">0x60</span>, <span class="number">0x80</span>,<span class="number">0xB1</span>, <span class="number">0x81</span>, <span class="number">0xBC</span>, <span class="number">0x76</span>, <span class="number">0x76</span>, <span class="number">0xBC</span>, <span class="number">0x81</span>, <span class="number">0xB1</span>,  <span class="number">0x53</span>, <span class="number">0xFC</span>, <span class="number">0x6B</span>, <span class="number">0x56</span>, <span class="number">0x56</span>, <span class="number">0x6B</span>, <span class="number">0xFC</span>, <span class="number">0x53</span>,<span class="number">0x53</span>, <span class="number">0x64</span>, <span class="number">0xBA</span>, <span class="number">0x28</span>, <span class="number">0x28</span>, <span class="number">0xBA</span>, <span class="number">0x64</span>, <span class="number">0x53</span>, <span class="number">0x96</span>, <span class="number">0x45</span>, <span class="number">0x2E</span>, <span class="number">0xD5</span>, <span class="number">0xD5</span>, <span class="number">0x2E</span>, <span class="number">0x45</span>, <span class="number">0x96</span>, <span class="number">0xDE</span>, <span class="number">0x03</span>, <span class="number">0x76</span>, <span class="number">0x51</span>, <span class="number">0x51</span>, <span class="number">0x76</span>, <span class="number">0x03</span>, <span class="number">0xDE</span></span><br><span class="line">]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(key)):</span><br><span class="line">    flag = enc[i] ^ key[i]</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">chr</span>(flag), end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>At 3730 Galactic Time, we will convene at our outpost the Phey forest, 4 miles from the Annara defense systems. Remember, the password for the bunker door is HTB&#123;unp4ck1ng_th3_s3cr3t,unr4v3ll1ng_th3_c0d3&#125;.</code></p>
+<blockquote>
+<p>FLAG: HTB{unp4ck1ng_th3_s3cr3t,unr4v3ll1ng_th3_c0d3}</p>
+</blockquote>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2025/08/19/Korea-2025/"
+      title="Hacktheon Sejong 2025 🇰🇷"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        Hacktheon Sejong 2025 🇰🇷
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2025/08/19/hcmusctf2025/"
+      title="Reverse/HCMUS-CTF 2025"
+     >
+
+    <p class="title-text">
+      
+        Reverse/HCMUS-CTF 2025
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2025 nukoneZ<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
